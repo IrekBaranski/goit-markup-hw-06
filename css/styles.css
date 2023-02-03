@@ -1,0 +1,917 @@
+/* ----- ------------------------------ ----- */
+/* ----- setting global tags and styles ----- */
+/* ----- common to the entire page      ----- */
+/* ----- ------------------------------ ----- */
+
+:root {
+    /*content colors*/
+    --main-color-black : rgb(33, 33, 33,1);
+    --second-color-dark-grey: rgb(117, 117, 117);
+    --main-color-on-dark-bg-white: rgba(255, 255, 255, 1);
+    --second-color-dark-bg-white-06a: rgba(255, 255, 255, 0.6); 
+    --svg-color-lgrey: rgb(174, 176, 183);
+    --border-color-white1: rgb(238, 238, 238);
+    --border-color-white2: rgb(236, 236, 236);
+
+    /* brand color is blue rgb(33, 150, 243), used to: hovered links, button, */
+    --brand-color-blue: rgb(33, 150, 243);
+    --brand-color-blue-a09: rgba(33, 150, 243, 0.9);
+    
+    --logotype-on-light-bg-black: rgb(0, 0, 0);
+    --logotype-on-dark-bg-white: rgb(255, 255, 255);
+    
+    /*background & shadow colors*/
+    --main-bg-color-white: rgb(255, 255, 255);
+    --second-bg-color-white: rgb(245, 244, 250);
+
+    --dark-bg-color-black1: rgb(47, 48, 58);
+    --dark-bg-color-black08: rgba(47, 48, 58, 0.8);
+    
+    --svg-bg-color-black01: rgba(255, 255, 255, 0.1);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-color-black);   
+    background-color: var(--main-bg-color-white);      
+}
+
+/* ----- ------------------------------ ----- */
+/* ----- tags- reset properties: ul, h  ----- */
+ul,
+li {
+    margin-block: 0px;
+    padding-inline-start: 0p;
+    margin: 0px;
+    }
+ul,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0px;
+}
+
+/* ----- (BEM) Global block - section ----- */
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+.section__header {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-align: center;
+    padding-bottom: 50px;
+    /*background-color: aquamarine;*/
+}
+
+.section__list {
+    list-style-type: none;
+}
+.container {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.link {
+    text-decoration: none;
+    cursor: pointer;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.link:hover,
+.link:focus {color: var(--brand-color-blue);
+}
+
+.card {
+    display: inline-block;
+    max-width: max-content;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--main-bg-color-white);
+
+}
+
+
+/* ----- ------------------------------ ----- */
+/* ----- Logo WebStudio - ready to use
+/* ----- logotype styles: on light & dark background
+/* ----- ------------------------------ ----- */
+.logo { 
+    display: inline-block;  
+}
+.logo__logotype{
+    text-decoration: none;
+    font-family: Raleway, Oleo Script, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+}
+.logo__logotype--brand-color {color: var(--brand-color-blue);}
+.logo__logotype--on-light-bg {color: var(--logotype-on-light-bg-black);}
+.logo__logotype--on-dark-bg {color: var(--logotype-on-dark-bg-white);}
+
+
+/* ----- ------------------------------ ----- */
+/* ----- ----- PAGE HEADER - MENU ----- ----- */
+/* ----- ------------------------------ ----- */
+
+.page-header {
+    background-color:var(--main-bg-color-white);
+    border-bottom: 1px solid var(--border-color-white2);
+}
+.menu {
+    height: 79px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.02em;
+}
+
+.menu__logo {
+    margin-right: 90px;  
+}
+
+/* ----- -------------------------------------------- */
+/* ----- 2nd menu item - navigation ----- */
+
+.menu__nav {
+    display: flex;
+    flex: 1;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.02em;
+   
+}
+.menu__nav-items {
+    display: flex;   
+    gap: 40px;
+    
+    list-style-type: none;
+    color: var(--main-color-black); 
+}
+
+.menu__nav-link {
+    color: var(--main-color-black); 
+    margin: 0px 3px;
+}
+
+.link--active::after {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+    width: 58px;
+    min-height: 4px;
+    border-radius: 10px;
+    background-color: var(--brand-color-blue);
+    margin-top: 28px;
+    position: absolute;
+
+    animation-name: updownLine;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+
+  }
+  
+@keyframes updownLine {
+    0% {
+        margin-top: 28px;
+        width: 58px
+
+        }
+    50% {
+        margin-top: 2px;
+        width: 62px
+        
+        }
+    100% {
+        margin-top: 28px;
+        width: 58px
+    }
+    }
+
+
+/* ----- -------------------------------------------- */
+/* ----- 3rd menu item - contact link ----- ----- */
+
+.menu__contact {
+    display: flex;
+    padding: 0px 10px;  
+}
+.menu__contact-items {
+    display: flex;
+    justify-content: center;   
+    gap: 30px; 
+
+    list-style-type: none;
+}
+.menu__contact-item {
+    display: inline-flex;
+    justify-content: center;
+    
+    text-decoration: none;
+    cursor: pointer;    
+    color: var(--second-color-dark-grey);
+    fill: var(--second-color-dark-grey);
+
+    transition-property: color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
+}
+.menu__contact-icon-mail {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+
+    fill: inherit; 
+    /*var(--second-color-dark-grey);*/
+}
+.menu__contact-icon-tel {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+
+    fill: inherit; 
+    /*var(--second-color-dark-grey);*/
+}
+.menu__contact-item:hover,
+.menu__contact-item:focus,
+.menu__contact-icon-mail:hover,
+.menu__contact-icon-mail:focus,
+.menu__contact-icon-tel:hover,
+.menu__contact-icon-tel:focus {
+    color: var(--brand-color-blue);
+    fill:var(--brand-color-blue);
+}
+
+/* ----- ------------------------------ ----- */
+/* ----- footer styles: dark background ----- */
+/* ----- ------------------------------ ----- */
+
+.section__footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+    background-color: var(--dark-bg-color-black1);
+}
+.footer {
+    padding-right: 15px;
+    display: flex;
+    align-content: flex-start;
+    column-gap: 70px;
+
+   /* background-color: gold; */
+}
+
+.footer__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    row-gap: 20px; 
+}
+
+/* ----- 1st footer item - logo + address box ----- */
+
+.address__link--color { color: var(--second-color-dark-bg-white-06a);}
+
+.address__box {
+    text-decoration: none;
+    height: 81px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+       
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    text-align: left;
+    
+    color: var(--main-color-on-dark-bg-white); 
+}
+
+/* ----- 2nd footer item - label + social media icons list  --*/
+
+.footer__label {
+    margin-top: 12px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16/14)px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: var(--main-color-on-dark-bg-white);
+}
+
+.footer__icons {
+    list-style-type: none;
+    display: flex;
+}
+
+.footer__icons-list {
+      
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    column-gap: 10px;
+    list-style: none;
+    /*background-color: chartreuse;*/
+   
+}
+.footer__icon-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    background-color: var(--svg-bg-color-black01);
+    fill: var(--main-color-on-dark-bg-white);
+
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+.footer__icon{
+    display: inline-block;    
+    fill: inherit;
+}
+
+.footer__icon-bg:focus,
+.footer__icon-bg:hover{
+    fill: var(--main-bg-color-white);
+    background-color: var(--brand-color-blue);
+}
+
+
+/* ----- ------------------------------ ----- */
+/* ----- MAIN PAGE SECTION - HEADER     ----- */
+/* ----- ------------------------------ ----- */
+/* ----- section ./header, witout class section, ----- */
+
+.header__banner {
+    
+    width: auto;
+    height: 600px;
+    background-position:center;
+    
+    background-color: var(--dark-bg-color-black1);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.4)), 
+    url(../images/heder-banner-opt-people-teams-at-work-.jpg);
+    
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, 
+ }
+.header__box {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+.header__slogan {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--main-color-on-dark-bg-white); 
+}
+
+/* ----- ----------------------------- ----- */
+/* ----- MODAL                         ----- */
+
+.button__order {
+    display: block;
+    
+    width: 200px;
+    height: 50px;
+    border-style: none;
+    border-radius: 4px;
+   
+    background-color: var(--brand-color-blue);
+   
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    
+    color: var(--main-color-on-dark-bg-white);
+    cursor: pointer;
+    
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: rgba(0, 0, 0, 0.2);
+    
+    transition-property: visibility, opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+  }
+  .modal {
+    display: flex;
+    position: fixed;
+    width: 528px;
+    height: 581px;
+    background-color: var(--second-bg-color-white);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px var(--dark-bg-color-black1),
+      0px 1px 1px var(--second-color-dark-grey),
+      0px 2px 1px var(--svg-color-lgrey);
+  }
+  
+  .is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(50%) translateY(-50%) scale(0.5) rotate(0deg) skew(10deg, 10deg);
+}
+
+  .modal__icon-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+
+    background-color: var(--main-bg-color-white);
+    border-color: var(--border-color-white2);
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .modal__icon-close:hover,
+  .modal__icon-close:focus {
+    cursor: pointer;
+    background-color: var(--brand-color-blue);
+  }
+
+
+/* ----- ------------------------------ ----- */
+/* ----- FEATURE SECTION - content article--- */
+/* ----- section, __short-padding-bottom
+/* ----- article __img, __header icon __text 
+/* ----- !!! WYMAGA POPRAWY ---------------- ----- */
+
+.section__short-padding-bottom {
+    padding-bottom: 0px;
+}
+.articles__list {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    
+    list-style: none; 
+}
+
+.article {
+    max-width: 270px;
+    /*background-color: coral;*/
+}
+.article__figure {
+    width: 270px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+    
+    background-color: var(--second-bg-color-white);
+}
+.article__icon {
+    display: block;
+    width: 65px;
+    height: 70px;      
+}
+.article__title {
+    
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-align:left;
+
+    margin-bottom: 10px;
+}
+.article__copy { 
+    height: 75px;
+
+    font-size: 14px;
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+    text-align: left;
+
+    color: var(--second-color-dark-grey);
+}
+
+/* ----- -------------------------- -----*/
+/* ----- OFFER Section ----- */
+
+.section__list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.offer-card__grid {
+    column-gap: 30px;
+}
+.offer-card {
+    display: block;
+    max-width: 370px;
+    height: max-content;
+    margin: 0px;
+    position: relative;
+    
+}
+.offer-card__img{
+    display: block;
+}
+
+.offer-card__label {
+    position: absolute;
+    bottom: 0; 
+    
+    display: block;
+    width: 370px;
+    height: 70px;
+    padding: 27px 90px;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: calc(16/14)px;
+    letter-spacing: 0.03em;
+    color: var(--main-color-on-dark-bg-white);
+    background: linear-gradient(0deg, var(--svg-bg-color-black01), 0%, var(--dark-bg-color-black08, 50%)) ;
+}
+
+/* ----- ---------- ---------- ---------------------*/
+/* ----- section our team contain below ---- -----*/
+/* ----- .section--color-bg, figure caption, icons list, links ----- ----- -----*/
+
+.section--color-bg {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--second-bg-color-white);
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-size:cover;
+    background-position-x: center;
+    
+}
+
+.team-card__set {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* ----- team card -> figure contain personalized card with: img, name, description, social media links, icons ----*/
+/*card{
+    display: inline-block;
+    max-width: max-content;
+    min-height: auto
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--main-bg-color-white);
+
+}*/
+
+.team-card {
+    max-width: 270px;
+    min-height: auto;
+    
+    background: var(--main-bg-color-white);
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+.team-card__img {
+    display: block;
+    width: auto;
+    height: 260px;
+}
+
+.team-card__body{
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 30px 32px;
+    
+    /*background-color: lightgreen;*/
+        
+}
+.team-card__name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 10px;
+        
+}
+.team-card__description {
+    font-size: 16px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 16px;
+
+    color: var(--second-color-dark-grey);
+}
+
+/* ----- def social media icons - ---- */
+
+.team-card__icons-list {
+      
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    column-gap: 10px;
+    list-style: none;
+    /*background-color: chartreuse;*/
+   
+}
+.team-card__icon-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--main-bg-color-white);
+    fill: var(--svg-color-lgrey);
+
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-card__icon{
+    display: inline-block;    
+    fill: inherit;
+}
+
+.team-card__icon-bg:focus,
+.team-card__icon-bg:hover{
+    fill: var(--main-bg-color-white);
+    background-color: var(--brand-color-blue);
+}
+
+
+/* ----- ----- ----- ----- ----- -----*/
+/* ----- section our client contain below ---- -----*/
+/* ----- figure caption, icons list, links ----- ----- -----*/
+
+.client__list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    list-style-type: none;
+}
+.client__item {
+    width: 168px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 4px;
+    border: 1px solid var(--svg-color-lgrey);
+
+    fill: var(--svg-color-lgrey);
+
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+.client__icon{
+    display: block;
+    width: 100px;
+    height: 60px;
+    fill: inherit;
+}
+
+.client__item:hover,
+.client__item:focus {
+    fill: var(--brand-color-blue);
+    border-color: var(--brand-color-blue);
+    
+}
+
+/* ----- ------------------------------ ----- */
+/* ----- SITE PORTFOLIO ----- ----- */
+/* ----- ------------------------------------ */
+/* ----- ------------------------------ ----- */
+
+.button__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 0px 8px;
+    height: auto;
+    margin-bottom: 50px;
+    
+}
+.button {
+    border-style: none;
+    border-radius: 4px;
+    padding: 6px 22px;
+    background-color: var(--second-bg-color-white);
+
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    /*position: relative;
+    top: -10px;*/
+    
+    background-color: var(--brand-color-blue);
+    color: var(--main-color-on-dark-bg-white);
+
+    
+    /* shadow-middle */
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);  
+}
+
+.button__text {
+    height: 38px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+
+    color: var(--main-color-black);
+    cursor: pointer;
+}
+
+/* ----- ---------- ---------- ----- */
+/* ----- 1st. Section - PORTFOLIO   ----- */
+/* ----- 
+/* ----- flex wrap 3/row */
+
+.section__grid {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 30px 30px; 
+
+   /*background-color: brown;  */
+}
+
+.portfolio-card {
+    flex-basis: calc((100% - 60px)/3);
+
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus,
+.portfolio-card:active {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-card__header {
+    position: relative;
+    display: block;
+    width: 370px;
+    height: 294px;
+
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-color-blue-a09);
+
+    transform: translateY(100%);
+    transition-property: transform;
+    transition: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.portfolio-card:hover .overlay {
+    transform: translatex(0);   
+}
+
+.portfolio-card__description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    letter-spacing: 0.03em;
+    text-align: left;
+    
+    padding: 49px 45px 49px 24px;
+    margin: 0;
+
+    color: var(--main-color-on-dark-bg-white);
+}
+
+.portfolio-card__body {
+    max-width: 370px;
+    padding: 15px 24px 20px;
+
+    border-left: 1px solid var(--border-color-white2);
+    border-right: 1px solid var(--border-color-white2);
+    border-bottom: 1px solid var(--border-color-white2);
+}
+.portfolio-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: var(--main-color-black);
+    margin-bottom: 4px;
+}
+.portfolio-card__label {
+    
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: var(--second-color-dark-grey);
+}
