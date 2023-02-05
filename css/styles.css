@@ -8,7 +8,8 @@
     --main-color-black : rgb(33, 33, 33,1);
     --second-color-dark-grey: rgb(117, 117, 117);
     --main-color-on-dark-bg-white: rgba(255, 255, 255, 1);
-    --second-color-dark-bg-white-06a: rgba(255, 255, 255, 0.6); 
+    --second-color-dark-bg-white-06a: rgba(255, 255, 255, 0.6);
+    --second-color-on-dark-bg-white-a03: rgba(255, 255, 255, 0.3);
     --svg-color-lgrey: rgb(174, 176, 183);
     --border-color-white1: rgb(238, 238, 238);
     --border-color-white2: rgb(236, 236, 236);
@@ -282,6 +283,13 @@ p {
     
     background-color: var(--dark-bg-color-black1);
 }
+.footer__grid {
+    display: flex;
+    justify-content: center;
+    column-gap: 70px;
+    align-content: flex-start;
+        
+}
 .footer {
     padding-right: 15px;
     display: flex;
@@ -322,7 +330,7 @@ p {
 
 /* ----- 2nd footer item - label + social media icons list  --*/
 
-.footer__label {
+.footer__label{
     margin-top: 12px;
 
     font-style: normal;
@@ -381,6 +389,51 @@ p {
     background-color: var(--brand-color-blue);
 }
 
+/* ----- 3-rd footer item - Form - ----- */
+
+.footer__form{
+    max-width: 570px;
+    flex:2;
+}
+
+.form__email-grid{
+    display: flex;
+    margin-top: 20px;
+}
+.form__email{
+    width: 356px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 4px;
+
+   
+    font-size: 16px;
+    line-height: calc(20/16) px;
+    letter-spacing: 0.03em;
+    text-align: left;
+
+    color: var(--second-color-dark-bg-white-06a);
+    border-color: var(--second-color-on-dark-bg-white-a03);
+    background-color: var(--dark-bg-color-black1);
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.form__email:hover,
+.form__email:focus,
+.form__email:active{
+    border-color: var(--brand-color-blue);
+}
+
+.footer__button{
+    margin-left: 12px;
+}
+
+
+
 
 /* ----- ------------------------------ ----- */
 /* ----- MAIN PAGE SECTION - HEADER     ----- */
@@ -388,10 +441,9 @@ p {
 /* ----- section ./header, witout class section, ----- */
 
 .header__banner {
-    
     width: auto;
     height: 600px;
-    background-position:center;
+    background-position: center;
     
     background-color: var(--dark-bg-color-black1);
     background-image: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.4)), 
@@ -420,7 +472,7 @@ p {
 /* ----- ----------------------------- ----- */
 /* ----- MODAL                         ----- */
 
-.button__order {
+.button {
     display: block;
     
     width: 200px;
@@ -430,11 +482,12 @@ p {
    
     background-color: var(--brand-color-blue);
    
-    font-family: Roboto;
+    
     font-size: 16px;
     font-weight: 700;
     line-height: 1.88;
     letter-spacing: 0.06em;
+    text-align: center;
     
     color: var(--main-color-on-dark-bg-white);
     cursor: pointer;
@@ -462,8 +515,8 @@ p {
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
-  }
-  .modal {
+}
+.order__modal {
     display: flex;
     position: fixed;
     width: 528px;
@@ -473,16 +526,35 @@ p {
     box-shadow: 0px 1px 3px var(--dark-bg-color-black1),
       0px 1px 1px var(--second-color-dark-grey),
       0px 2px 1px var(--svg-color-lgrey);
-  }
+}
   
-  .is-hidden {
+.is-hidden {
     pointer-events: none;
     visibility: hidden;
     opacity: 0;
-    transform: translateX(50%) translateY(-50%) scale(0.5) rotate(0deg) skew(10deg, 10deg);
+    /*transform: translateX(50%) translateY(-50%) scale(0.5) rotate(0deg) skew(10deg, 10deg);*/
 }
 
-  .modal__icon-close {
+.modal__button-close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    
+    background-color: var(--main-bg-color-white);
+    border-color: var(--border-color-white2);
+    padding: 0px;
+    margin: 0px;
+}
+
+.modal__icon-close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -499,13 +571,46 @@ p {
     border-color: var(--border-color-white2);
     padding: 0px;
     margin: 0px;
-  }
+}
   
-  .modal__icon-close:hover,
-  .modal__icon-close:focus {
+.modal__icon-close:hover,
+.modal__icon-close:focus {
     cursor: pointer;
     background-color: var(--brand-color-blue);
-  }
+}
+
+/* ----- Section ORDER / modal / Order-form ----- */
+.order-form__grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+
+    padding: 40px;
+}
+.order.form__header{
+    display: block;
+
+}
+
+.order-form__label{
+    font-size: 12px;
+    line-height: calc(14/12) px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+}
+
+.order-form__input {
+    width: 448px;
+    height: 40px;
+}
+
+.order-form__textarea{
+    max-width: 448px;
+    max-height: 120px;
+}
 
 
 /* ----- ------------------------------ ----- */
@@ -783,7 +888,7 @@ p {
     margin-bottom: 50px;
     
 }
-.button {
+.portfolio__button {
     border-style: none;
     border-radius: 4px;
     padding: 6px 22px;
@@ -794,9 +899,9 @@ p {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover,
-.button:focus,
-.button:active {
+.portfolio__button:hover,
+.portfolio__button:focus,
+.portfolio__button:active {
     /*position: relative;
     top: -10px;*/
     
