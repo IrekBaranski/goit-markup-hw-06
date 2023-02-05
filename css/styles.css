@@ -7,12 +7,15 @@
     /*content colors*/
     --main-color-black : rgb(33, 33, 33,1);
     --second-color-dark-grey: rgb(117, 117, 117);
+    --second-color-dark-grey-05: rgba(117, 117, 117, 0.5);
     --main-color-on-dark-bg-white: rgba(255, 255, 255, 1);
     --second-color-dark-bg-white-06a: rgba(255, 255, 255, 0.6);
     --second-color-on-dark-bg-white-a03: rgba(255, 255, 255, 0.3);
     --svg-color-lgrey: rgb(174, 176, 183);
+
     --border-color-white1: rgb(238, 238, 238);
     --border-color-white2: rgb(236, 236, 236);
+    --border-color-black-02: rgba(33, 33, 33, 0.2);
 
     /* brand color is blue rgb(33, 150, 243), used to: hovered links, button, */
     --brand-color-blue: rgb(33, 150, 243);
@@ -433,18 +436,17 @@ p {
 }
 
 
-
-
 /* ----- ------------------------------ ----- */
-/* ----- MAIN PAGE SECTION - HEADER     ----- */
+/* ----- MAIN PAGE      ----- */
 /* ----- ------------------------------ ----- */
-/* ----- section ./header, witout class section, ----- */
+/* ----- Section  - ORDER - ----- */
+/* section ./header, witout class section, ----- */
 
-.header__banner {
+.section__order {
     width: auto;
     height: 600px;
     background-position: center;
-    
+        
     background-color: var(--dark-bg-color-black1);
     background-image: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.4)), 
     url(../images/heder-banner-opt-people-teams-at-work-.jpg);
@@ -452,7 +454,7 @@ p {
     background-repeat: no-repeat, no-repeat;
     background-size: cover, 
  }
-.header__box {
+.order__grid {
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -460,7 +462,7 @@ p {
     align-items: center;
     row-gap: 30px;
 }
-.header__slogan {
+.order__slogan {
     font-size: 44px;
     font-weight: 900;
     line-height: 1.36;
@@ -471,6 +473,9 @@ p {
 
 /* ----- ----------------------------- ----- */
 /* ----- MODAL                         ----- */
+/*.order__btn{
+    to co tyczy tego buttonu
+} */
 
 .button {
     display: block;
@@ -479,10 +484,8 @@ p {
     height: 50px;
     border-style: none;
     border-radius: 4px;
-   
-    background-color: var(--brand-color-blue);
-   
     
+    background-color: var(--brand-color-blue);
     font-size: 16px;
     font-weight: 700;
     line-height: 1.88;
@@ -496,7 +499,8 @@ p {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop {
+
+.order__backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -509,7 +513,7 @@ p {
     justify-content: center;
     align-items: center;
     
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
     
     transition-property: visibility, opacity, transform;
     transition-duration: 1s;
@@ -517,11 +521,12 @@ p {
     
 }
 .order__modal {
-    display: flex;
     position: fixed;
     width: 528px;
     height: 581px;
-    background-color: var(--second-bg-color-white);
+    padding: 40px;
+
+    background-color: var(--main-bg-color-white);
     border-radius: 4px;
     box-shadow: 0px 1px 3px var(--dark-bg-color-black1),
       0px 1px 1px var(--second-color-dark-grey),
@@ -535,7 +540,7 @@ p {
     /*transform: translateX(50%) translateY(-50%) scale(0.5) rotate(0deg) skew(10deg, 10deg);*/
 }
 
-.modal__button-close{
+.modal__btn-close{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -548,50 +553,44 @@ p {
     height: 30px;
     border-radius: 50px;
     
-    background-color: var(--main-bg-color-white);
-    border-color: var(--border-color-white2);
-    padding: 0px;
-    margin: 0px;
-}
-
-.modal__icon-close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    position: absolute;
-    top: 17px;
-    right: 17px;
-    
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-
     background-color: var(--main-bg-color-white);
     border-color: var(--border-color-white2);
     padding: 0px;
     margin: 0px;
 }
   
-.modal__icon-close:hover,
-.modal__icon-close:focus {
+.modal__btn-close:hover,
+.modal__btn-close:focus {
     cursor: pointer;
     background-color: var(--brand-color-blue);
 }
 
-/* ----- Section ORDER / modal / Order-form ----- */
-.order-form__grid{
+.order-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
     gap: 10px;
 
-    padding: 40px;
-}
-.order.form__header{
-    display: block;
+    margin-top: 12px;
+    /*background-color: var(--main-bg-color-white);
 
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px var(--dark-bg-color-black1),
+      0px 1px 1px var(--second-color-dark-grey),
+      0px 2px 1px var(--svg-color-lgrey);*/
+
+}
+
+.order-form__header{
+    display: block;
+    
+    font-size: 20px;
+    font-weight: 700;
+    line-height: (23/20)px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: var(--main-color-black);
 }
 
 .order-form__label{
@@ -599,20 +598,48 @@ p {
     line-height: calc(14/12) px;
     letter-spacing: 0.01em;
     text-align: left;
-
+    color: var(--second-color-dark-grey);
 }
 
 .order-form__input {
     width: 448px;
     height: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color-black-02);
+    padding: 10px;
+    padding-left: 40px;
+    margin-top: 4px;
 }
 
 .order-form__textarea{
-    max-width: 448px;
-    max-height: 120px;
+    width: 448px;
+    height: 120px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color-black-02);
+    padding: 10px;
+
+    text-align: start;
+    color: var(--second-color-dark-grey);
+
 }
+.order-form__textarea::placeholder{
+    font-size: 12px;
+    line-height: (14/12)px;
+    letter-spacing: 0.01em;
+    text-align: start;
+    color: var(--second-color-dark-grey-05);
 
 
+}
+.order-form__checkbox {
+    text-decoration: overline;
+}
+.order-form__btn-submit{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    
+}
 /* ----- ------------------------------ ----- */
 /* ----- FEATURE SECTION - content article--- */
 /* ----- section, __short-padding-bottom

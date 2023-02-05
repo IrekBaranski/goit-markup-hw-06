@@ -92,52 +92,65 @@
     dodać/ zmienić block zamów (order): okno modalen z butonami, formularz zamówienia -->
     <!-- -------------------------------------------------------- -->
 
-        <header class="header__banner">
+        <header class="section__order">
             <div class="container">
-                <div class="header__box">
-                    <h1 class="header__slogan">EFEKTYWNE ROZWIĄZANIA <br> DLA WASZEGO BIZNESU </h1>
+                <div class="order__grid">
+                    <h1 class="order__slogan">EFEKTYWNE ROZWIĄZANIA <br> DLA WASZEGO BIZNESU </h1>
                 
                 <!-- Order-modal (js)  -->
 
-                    <button data-modal-open class="button modal__button" type="button">Zamów usługe
+                    <button data-modal-open class="button modal__btn" type="button">Zamów usługe
                     </button>
-                    <div class="backdrop is-hidden" data-modal><!--  -->
-                        <div class="modal order__modal">
-                            <button class="modal__button-close" data-modal-close class="modal__icon-close">
+
+                    <div class="order__backdrop is-hidden" data-modal>
+
+                        <div class="order__modal modal">
+                            <h2 class="order-form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
+                            </h2>
+
+                            <div class="order-form" role="group" aria-labelledby="order-form">
+
+                                <label class="order-form__label" for="name">Imię<br>
+                                    <input class="order-form__input" type="text" id="name" maxlength="60"/>
+                                </label>
+                                
+                                <label class="order-form__label" for="phone">Telefon<br>
+                                    <input class="order-form__input" type="text" id="phone" maxlength="15"/>
+                                </label>
+
+                                <label class="order-form__label" for="email">Email <br>
+                                    <input class="order-form__input" type="email" id="email" required maxlength="50"/>
+                                </label>
+
+                                <label class="order-form__label" for="comment">Komentarz<br>
+                                    <textarea placeholder="Wprowadź tekst" class="order-form__textarea" maxlength="1000"></textarea>
+                                     
+                                </label>
+                            </div>
+                                                                   
+                            <div class="order-form__terms">
+                                <input class="order-form__checkbox" type="checkbox" id="checkbox" value="true" name="declare" required/>
+
+                                    <label for="checkbox" class="order-form__label">Oświadczam iż akceptuję
+                                        <a class="privacy-policy__link" href="https://www.google.pl/">
+                                        Regulamin    
+                                        </a>
+                                        i
+                                        <a class="privacy-policy__link" href="https://www.google.pl/">
+                                        Politykę Prywatności.
+                                        </a>
+                                    </label>
+                                    
+                            </div>
+                            <button class="button order-form__btn-submit" type="submit">Wyślij</button>
+                                
+                            <button data-modal-close class="modal__btn-close">
                                 <svg class="close" width="11" height="11">
                                     <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
                                 </svg>
                             </button> 
-                            <div class="order-form-group order-form__grid" role="group" aria-labelledby="order-form__header">
-
-                                <h2 class="order-form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej</h2>
-
-                                <label class="order-form__label" for="name">Imię<br>
-                                    <input class="order-form__input" type="text" id="name"/>
-                                </label>
-                                
-                                <label class="order-form__label" for="phone">Telefon<br>
-                                    <input class="order-form__input" type="number" id="phone"/>
-                                </label>
-
-                                <label class="order-form__label" for="email">Email <br>
-                                    <input class="order-form__input" type="email" id="email"/>
-                                </label>
-
-                                <label class="order-form__label" for="feedback">Komentarz<br>
-                                    <textarea class="order-form__textarea" rows="5" placeholder="Wprowadź tekst">
-                                    </textarea>
-                                </label>
-                                                                   
-                                <input type="checkbox" required><br>
-                                <button type="submit">Subscribe</button>
                               </div>
-                            <!--<form name="order__form" method="post" autocomplete="off"target="_self" validate>
-                                <h2 class="form__heder">Zostaw swoje dane w formularzu poniżej</h2>
-                                
-
-                            </form>-->
-                              
+                                                          
                         </div>
                     </div>
                 </div>
