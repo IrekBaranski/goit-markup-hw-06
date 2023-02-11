@@ -97,52 +97,53 @@
                 <div class="order__grid">
                     <h1 class="order__slogan">EFEKTYWNE ROZWIĄZANIA <br> DLA WASZEGO BIZNESU </h1>
                 
-                <!-- Order-modal (js)  -->
+                <!-- modal (js)  -->
 
                     <button data-modal-open class="button modal__btn" type="button">Zamów usługe
                     </button>
 
-                    <div class="order__backdrop is-hidden" data-modal>
+                    <div class="backdrop is-hidden" data-modal>
 
-                        <div class="order__modal modal">
-                            <h2 class="order-form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
-                            </h2>
-
-                            <div class="order-form" role="group" aria-labelledby="order-form">
+                        <div class="modal modal__grid">
+                            
+                            <form class="order-form" role="group" aria-labelledby="order-form">
+                                <h2 class="order-form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
+                                </h2>                            
 
                                 <label class="order-form__label" for="name">Imię<br>
-                                    <input class="order-form__input" type="text" id="name" maxlength="60"/>
+                                    <input class="order-form__input" type="text" id="name" placeholder=" " maxlength="60"/>
                                 </label>
                                 
                                 <label class="order-form__label" for="phone">Telefon<br>
-                                    <input class="order-form__input" type="text" id="phone" maxlength="15"/>
+                                    <input class="order-form__input" type="text" id="phone" placeholder=" " maxlength="15"/>
                                 </label>
 
                                 <label class="order-form__label" for="email">Email <br>
-                                    <input class="order-form__input" type="email" id="email" required maxlength="50"/>
+                                    <input class="order-form__input" type="email" id="email" placeholder=" "  required maxlength="50"/>
                                 </label>
 
                                 <label class="order-form__label" for="comment">Komentarz<br>
                                     <textarea placeholder="Wprowadź tekst" class="order-form__textarea" maxlength="1000"></textarea>
                                      
                                 </label>
-                            </div>
+                            
                                                                    
-                            <div class="order-form__terms">
+                                <div class="order-form__terms">
                                 <input class="order-form__checkbox" type="checkbox" id="checkbox" value="true" name="declare" required/>
 
                                     <label for="checkbox" class="order-form__label">Oświadczam iż akceptuję
-                                        <a class="privacy-policy__link" href="https://www.google.pl/">
+                                        <a class="link privacy-policy__link " href="https://www.google.pl/" target="_blank">
                                         Regulamin    
                                         </a>
                                         i
-                                        <a class="privacy-policy__link" href="https://www.google.pl/">
+                                        <a class=" link privacy-policy__link" href="https://www.google.pl/" target="_blank">
                                         Politykę Prywatności.
                                         </a>
                                     </label>
                                     
-                            </div>
-                            <button class="button order-form__btn-submit" type="submit">Wyślij</button>
+                                </div>
+                                <button class="button order-form__btn-submit" type="submit">Wyślij</button>
+                            </form>
                                 
                             <button data-modal-close class="modal__btn-close">
                                 <svg class="close" width="11" height="11">

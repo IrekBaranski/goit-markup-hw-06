@@ -91,9 +91,13 @@ p {
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
+
+.form:focus,
+.form:focus-within,
+.form:hover,
 .link:hover,
+.link:active,
 .link:focus {color: var(--brand-color-blue);
 }
 
@@ -500,7 +504,7 @@ p {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.order__backdrop {
+.backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -520,7 +524,7 @@ p {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
 }
-.order__modal {
+.modal {
     position: fixed;
     width: 528px;
     height: 581px;
@@ -565,6 +569,16 @@ p {
     background-color: var(--brand-color-blue);
 }
 
+/* ----- Block: .order-form  ----- */
+
+.form{
+    width: auto;
+
+}
+
+.form::placeholder{
+
+}
 .order-form{
     display: flex;
     flex-direction: column;
@@ -609,6 +623,11 @@ p {
     padding: 10px;
     padding-left: 40px;
     margin-top: 4px;
+    color: var(--main-color-black);
+}
+
+.order-form::placeholder{
+
 }
 
 .order-form__textarea{
@@ -619,7 +638,7 @@ p {
     padding: 10px;
 
     text-align: start;
-    color: var(--second-color-dark-grey);
+    color: var(--main-color-black);
 
 }
 .order-form__textarea::placeholder{
