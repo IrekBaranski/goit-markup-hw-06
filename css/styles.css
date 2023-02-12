@@ -354,14 +354,12 @@ p {
 }
 
 .footer__icons-list {
-      
     display: flex;
     justify-content: center;
     align-content: center;
     column-gap: 10px;
     list-style: none;
     /*background-color: chartreuse;*/
-   
 }
 .footer__icon-bg {
     display: flex;
@@ -380,7 +378,6 @@ p {
     transition-property: background-color, fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 
 .footer__icon{
@@ -396,22 +393,25 @@ p {
 
 /* ----- 3-rd footer item - Form - ----- */
 
-.footer__form{
+.footer-form{
     max-width: 570px;
+    height: 50px;
     flex:2;
 }
 
-.form__email-grid{
+.footer-form__grid{
     display: flex;
-    margin-top: 20px;
+    justify-content: start;
+    align-items: center;
+    gap:12px;
 }
-.form__email{
-    width: 356px;
+.footer-form__input{
+    width: 350px;
     height: 50px;
     padding: 10px;
     border-radius: 4px; 
+    border: 1px solid var(--second-color-on-dark-bg-white-a03);
 
-   
     font-size: 16px;
     line-height: calc(20/16) px;
     letter-spacing: 0.03em;
@@ -424,19 +424,27 @@ p {
     transition-property: border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
-.form__email:hover,
-.form__email:focus,
-.form__email:active{
+.footer-form__input:hover,
+.footer-form__input:focus{
     border-color: var(--brand-color-blue);
 }
 
-.footer__button{
-    margin-left: 12px;
+.footer-btn{
+    padding: 10px 26px 10px 42px;
 }
-
+.footer-btn__grid{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 24px;
+    
+}
+.footer-btn__icon{
+    display: inline-block;
+    fill: var(--main-bg-color-white);
+}
 
 /* ----- ------------------------------ ----- */
 /* ----- MAIN PAGE      ----- */
@@ -546,7 +554,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    cursor: pointer;
+
     position: absolute;
     top: 17px;
     right: 17px;
@@ -559,11 +568,14 @@ p {
     border-color: var(--border-color-white2);
     padding: 0px;
     margin: 0px;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
   
 .modal__btn-close:hover,
 .modal__btn-close:focus {
-    cursor: pointer;
     background-color: var(--brand-color-blue);
 }
 
@@ -618,7 +630,11 @@ p {
     margin-top: 4px;
     border-color: var(--border-color-black-02);
     color: var(--main-color-black);
-    fill: var(--main-color-black)
+    fill: var(--main-color-black);
+
+    transition-property: border-color, fill, outline;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form__icon{
     display: flex;
@@ -680,6 +696,10 @@ p {
     border: 1px solid var(--border-color-black-02);
     border-color: var(--border-color-black-02);
     color: var(--main-color-black);
+
+    transition-property: border-color, outline;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form__textarea::placeholder{
     font-size: 12px;
@@ -718,6 +738,10 @@ p {
     margin-right: 8px; 
     fill: var(--main-color-black);
     cursor: pointer;
+
+    transition-property: background-image, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox__input:checked{

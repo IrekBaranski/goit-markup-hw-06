@@ -683,15 +683,7 @@
                 </ul>
             </div>
         </section>
-        <section class="section">
-            <div class="container">
-                <div class="test-area">
 
-                </div>
-
-            </div>
-            
-        </section>
     </main>
 
 <!-- --------------------------------------------------------------------------------------------------- -->
@@ -772,14 +764,28 @@
                 </ul>
             </div>
 
-            <div class="footer__item footer__form ">
-                <form class="form" name="newsletter_email" action="/singnup" method="post" autocomplete="off" target="_self" validate>
-                    <p class="footer__label">
-                        <label for="email" >ZAPISZ SIĘ DO NEWSLETTERA></label><br>
-                        <div class="form__email-grid">
-                        <input  class="form__email" type="email" name="email" id="email" placeholder="E-mail, example@mail.com" />
-                        <button class="button footer__button" type="submit">Zapisz się
-                        </button> 
+            <form class="footer__item footer-form" name="newsletter_email" action="/singnup" method="post" autocomplete="off" target="_self" validate>
+                <label class="footer__label" for="email" >ZAPISZ SIĘ DO NEWSLETTERA
+                </label>
+                <div class="footer-form__grid">
+                    <input  
+                    class="footer-form__input" 
+                    type="email"
+                    id="email" 
+                    name="newsletter-user-email" 
+                    placeholder="E-mail, example@mail.com" 
+                    />
+                    <button class="button footer-btn" type="submit">
+                        <div class="footer-btn__grid">
+                            <span class="footer-btn__text">
+                            Zapisz się
+                            </span>
+                            <svg class="footer-btn__icon" width="24" height="24">
+                                <use href="./images/icons.svg#icon-icon-send"/>
+                            </svg>
+                        </div>
+                    </button>
+                </label>
                         </div>                             
                         
                     </p>
