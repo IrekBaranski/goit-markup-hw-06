@@ -1035,7 +1035,7 @@ p {
 /* ----- link ./portfolio.html------------------------------------ */
 /* ----- portfolio page -------------------------------------------------------------- ----- */
 
-.button__list {
+.portfolio-button__grid {
     list-style-type: none;
     display: flex;
     justify-content: center;
