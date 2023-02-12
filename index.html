@@ -104,34 +104,34 @@
 
                     <div class="backdrop is-hidden" data-modal>
 
-                        <div class="modal modal__grid">
+                        <div class="modal">
                             
-                            <form class="order-form" role="group" aria-labelledby="order-form">
-                                <h2 class="order-form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
+                            <form class="form" role="group" aria-labelledby="order-form">
+                                <h2 class="form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
                                 </h2>                            
 
-                                <label class="order-form__label" for="name">Imię<br>
-                                    <input class="order-form__input" type="text" id="name" placeholder=" " maxlength="60"/>
+                                <label class="form__label" for="name">Imię<br>
+                                    <input class="form__input" type="text" id="name" placeholder=" " maxlength="60"/>
                                 </label>
                                 
-                                <label class="order-form__label" for="phone">Telefon<br>
-                                    <input class="order-form__input" type="text" id="phone" placeholder=" " maxlength="15"/>
+                                <label class="form__label" for="phone">Telefon<br>
+                                    <input class="form__input" type="text" id="phone" placeholder=" " maxlength="15"/>
                                 </label>
 
-                                <label class="order-form__label" for="email">Email <br>
-                                    <input class="order-form__input" type="email" id="email" placeholder=" "  required maxlength="50"/>
+                                <label class="form__label" for="email">Email <br>
+                                    <input class="form__input" type="email" id="email" placeholder=" "  required maxlength="50"/>
                                 </label>
 
-                                <label class="order-form__label" for="comment">Komentarz<br>
-                                    <textarea placeholder="Wprowadź tekst" class="order-form__textarea" maxlength="1000"></textarea>
+                                <label class="form__label" for="comment">Komentarz<br>
+                                    <textarea placeholder="Wprowadź tekst" class="form__input form__textarea" maxlength="1000"></textarea>
                                      
                                 </label>
                             
                                                                    
-                                <div class="order-form__terms">
-                                <input class="order-form__checkbox" type="checkbox" id="checkbox" value="true" name="declare" required/>
+                                <div class="form__terms">
+                                <input class="form__checkbox" type="checkbox" id="checkbox" value="true" name="declare" required/>
 
-                                    <label for="checkbox" class="order-form__label">Oświadczam iż akceptuję
+                                    <label for="checkbox" class="form__label">Oświadczam iż akceptuję
                                         <a class="link privacy-policy__link " href="https://www.google.pl/" target="_blank">
                                         Regulamin    
                                         </a>
@@ -142,7 +142,7 @@
                                     </label>
                                     
                                 </div>
-                                <button class="button order-form__btn-submit" type="submit">Wyślij</button>
+                                <button class="button form__btn-submit" type="submit">Wyślij</button>
                             </form>
                                 
                             <button data-modal-close class="modal__btn-close">
@@ -621,7 +621,8 @@
         </section>
     </main>
 
-<!-- ----- ----- --------- ----- ----- -->        
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------------------- -->
     <!-- ----- ----- FOOTER SECTION ----- ----- -->
     <!-- ----- general block-classes: section, container,// specyfic block: footer ----- -->
     <!--  cont. logo + address box / social media icons ----- -->
@@ -645,8 +646,6 @@
                 </address>
             </div> 
 
-    <!-- ----- ----- --------- ----- ----- -->        
-        <!-- ----- ----- FOOTER SECTION ----- ----- -->
             <!-- 2nd footer item - cont. label + social media icons list  -->
 
             <div class="footer__item"> 
@@ -696,13 +695,12 @@
                                 </svg>
                             </a>
                         </li>
-                    </ul>
-                    
+                    </ul>  
                 </ul>
-
             </div>
-            <div class="footer__item footer__form">
-                <form name="newsletter_email" action="/singnup" method="post" autocomplete="off" target="_self" validate>
+
+            <div class="footer__item footer__form ">
+                <form class="form" name="newsletter_email" action="/singnup" method="post" autocomplete="off" target="_self" validate>
                     <p class="footer__label">
                         <label for="email" >ZAPISZ SIĘ DO NEWSLETTERA></label><br>
                         <div class="form__email-grid">

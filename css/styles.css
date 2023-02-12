@@ -93,9 +93,7 @@ p {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form:focus,
-.form:focus-within,
-.form:hover,
+
 .link:hover,
 .link:active,
 .link:focus {color: var(--brand-color-blue);
@@ -411,7 +409,7 @@ p {
     width: 356px;
     height: 50px;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 4px; 
 
    
     font-size: 16px;
@@ -569,34 +567,27 @@ p {
     background-color: var(--brand-color-blue);
 }
 
-/* ----- Block: .order-form  ----- */
+/* ----- Block: form  ----- */
 
 .form{
-    width: auto;
-
-}
-
-.form::placeholder{
-
-}
-.order-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
     gap: 10px;
 
+    width: auto;
     margin-top: 12px;
-    /*background-color: var(--main-bg-color-white);
+    background-color: var(--main-bg-color-white);
 
-    border-radius: 4px;
+    /*  border-radius: 4px;
     box-shadow: 0px 1px 3px var(--dark-bg-color-black1),
       0px 1px 1px var(--second-color-dark-grey),
       0px 2px 1px var(--svg-color-lgrey);*/
-
 }
 
-.order-form__header{
+
+.form__header{
     display: block;
     
     font-size: 20px;
@@ -607,7 +598,7 @@ p {
     color: var(--main-color-black);
 }
 
-.order-form__label{
+.form__label{
     font-size: 12px;
     line-height: calc(14/12) px;
     letter-spacing: 0.01em;
@@ -615,7 +606,7 @@ p {
     color: var(--second-color-dark-grey);
 }
 
-.order-form__input {
+.form__input {
     width: 448px;
     height: 40px;
     border-radius: 4px;
@@ -625,39 +616,33 @@ p {
     margin-top: 4px;
     color: var(--main-color-black);
 }
-
-.order-form::placeholder{
-
+.form__input:focus,
+.form__input:focus-within,
+.form__input:hover{
+    border-color: var(--brand-color-blue);
+    fill: var(--brand-color-blue);
+    outline: var(--brand-color-blue);
 }
 
-.order-form__textarea{
-    width: 448px;
+.form__textarea{
     height: 120px;
-    border-radius: 4px;
-    border: 1px solid var(--border-color-black-02);
-    padding: 10px;
-
-    text-align: start;
-    color: var(--main-color-black);
-
 }
-.order-form__textarea::placeholder{
+.form__textarea::placeholder{
     font-size: 12px;
     line-height: (14/12)px;
     letter-spacing: 0.01em;
     text-align: start;
     color: var(--second-color-dark-grey-05);
-
-
 }
-.order-form__checkbox {
+.form__checkbox {
     text-decoration: overline;
 }
-.order-form__btn-submit{
+.form__btn-submit{
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);   
 }
 /* ----- ------------------------------ ----- */
 /* ----- FEATURE SECTION - content article--- */
@@ -920,10 +905,10 @@ p {
     
 }
 
-/* ----- ------------------------------ ----- */
-/* ----- SITE PORTFOLIO ----- ----- */
-/* ----- ------------------------------------ */
-/* ----- ------------------------------ ----- */
+/* ----- -------------------------------------------------------------- ----- */
+/* ----- Page PORTFOLIO ----- ----- */
+/* ----- link ./portfolio.html------------------------------------ */
+/* ----- portfolio page -------------------------------------------------------------- ----- */
 
 .button__list {
     list-style-type: none;
@@ -934,7 +919,10 @@ p {
     margin-bottom: 50px;
     
 }
-.portfolio__button {
+.portfolio-button {
+    display: block;
+    cursor: pointer;
+
     border-style: none;
     border-radius: 4px;
     padding: 6px 22px;
@@ -945,9 +933,9 @@ p {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio__button:hover,
-.portfolio__button:focus,
-.portfolio__button:active {
+.portfolio-button:hover,
+.portfolio-button:focus,
+.portfolio-button:active {
     /*position: relative;
     top: -10px;*/
     
@@ -959,7 +947,7 @@ p {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);  
 }
 
-.button__text {
+.portfolio-button__text {
     height: 38px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -969,7 +957,7 @@ p {
     letter-spacing: 0.03em;
 
     color: var(--main-color-black);
-    cursor: pointer;
+    
 }
 
 /* ----- ---------- ---------- ----- */
