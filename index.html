@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="grupa HTML CSS.Poland 2.0, zadanie HW-01 autor: Ireneusz Barański">
+    <meta name="description" content="project WebStudio company">
     
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,39 +23,61 @@
   <body>
     <!-- HEADER - class header-section -->
     <header class="header-section">
-      <div class="header__display container">
+      <!-- 1st Section item -->
+      <div class="header-section__wrapper container">
+        <!-- 1st header item - logo link-->
+        <a class="logo" href="./index.html">Web<span class="logo--dark-theme">Studio</span>
+        </a> 
+        <!-- 2nd header item nav lists, --> 
         <nav class="nav">
-          <a class="logo" href="./index.html">Web<span class="logo--dark-theme">Studio</span>
-          </a>
+          <!-- 1st nav item --> 
           <ul class="menu">
             <li>
-              <a class="menu__item active" href="./index.html">Studio</a>
+              <a class="menu__link active" href="./index.html">Studio</a>
             </li>
             <li>
-              <a class="menu__item" href="">Portfolio</a>
+              <a class="menu__link" href="">Portfolio</a>
             </li>
             <li>
-              <a class="menu__item" href="">Contacts</a>
+              <a class="menu__link" href="">Contacts</a>
             </li>
           </ul>
-        </nav>
-        <address class="header-section__address">
-          <ul class="address">
-            <li>
-              <a class="address__item" href="mailto:info@devstudio.com">info@devstudio.com</a>
-            </li>
+          <!-- 2nd nav item -->
+          <address class="header-section__address">
+            <ul class="address">
+              <li>
+                <a class="address__item" href="mailto:info@devstudio.com">info@devstudio.com</a>
+              </li>
 
-            <li>
-              <a class="address__item" href="tel:+110001111111">+11 (000) 111-11-11</a>
-            </li>
-          </ul>
-        </address>     
-      </div>         
+              <li>
+                <a class="address__item" href="tel:+110001111111">+11 (000) 111-11-11</a>
+              </li>
+            </ul>
+          </address>
+        </nav>
+        <!--3rd header item nav btn icon -->
+        <!-- MODAL BTN !!-->
+        <button class="nav__btn" data-modal-open>
+          <svg 
+            class="nav__icon" 
+            width="24" 
+            height="24"
+          >
+            <use href="./images/icons.svg#icon-ham"></use>
+          </svg>
+        </button>
+        <!-- mobile nav menu => find code below footer -->
+      </div>
+
+      <!-- NEW NAV-->
+      <!-- nav hamburger menu-->
     </header>
 
     <main>
       <!-- MAIN -->
+      
       <!-- 1st entry-section -->
+      <!-- changes include item sizes -->
       <section class="entry-section" >
         <div class="container">
           <h1 class="entry-title">Effective Solutions<br>for Your Business</h1>
@@ -65,6 +87,7 @@
         </div>
       </section>
       <!-- 1st section end -->
+
       <!-- 2nd section - advantages articles -          -->
       <section class="section">
         <div class="container">
@@ -121,8 +144,12 @@
           <ul class="section__items">
             <!-- 1st Team Card -->
             <li class="card">
-              <img 
-                src="./images/mark-guerrero-product-designer.jpg" 
+              <img
+                srcset="
+                  ./images/mark-guerrero-product-designer@1x.jpg 1x,
+                  ./images/mark-guerrero-product-designer@2x.jpg 2x
+                " 
+                src="./images/mark-guerrero-product-designer@1x.jpg" 
                 alt="uśmiechnięty mężczyzna z brodą"
                 width="264"
                 class="card__img">
@@ -164,8 +191,15 @@
                 </ul>
               </div>
             </li>
+            <!-- 2nd Team Card -->
             <li class="card">
-              <img src="./images/tom-ford-fronted-developer.jpg" 
+              <img
+                srcset="
+                  ./images/tom-ford-fronted-developer-@1x.jpg 1x,
+                  ./images/tom-ford-fronted-developer-@2x.jpg 2x,
+                " 
+                src="
+                  ./images/tom-ford-fronted-developer-@1x.jpg" 
               alt="zdjęcie mężczyzny"           
               width="264"
               class="card__img">
@@ -205,8 +239,14 @@
                 </ul>
               </div>
             </li>
+            <!-- 3rd Team Card -->
             <li class="card">
-              <img src="./images/camila-garcia-marketing.jpg" 
+              <img 
+                srcset="
+                  ./images/camila-garcia-marketing-@1x.jpg 1x,
+                  ./images/camila-garcia-marketing-@2x.jpg 2x
+                
+                " src="./images/camila-garcia-marketing-@1x.jpg" 
               alt="zdjęcie kobiety"          
               width="264"
               class="card__img">
@@ -246,8 +286,13 @@
                 </ul>
               </div>    
             </li>
+            <!-- 4th Team Card -->
             <li class="card">
-              <img src="./images/daniel-wilson-ui-designer.jpg" alt="zdjęcie okienek z aplikacji bankowej"
+              <img srcset="
+              ./images/daniel-wilson-ui-designer@1x.jpg 1x,
+              ./images/daniel-wilson-ui-designer@2x.jpg 2x
+              "
+              src="./images/daniel-wilson-ui-designer@1x.jpg" alt="zdjęcie okienek z aplikacji bankowej"
               width="264"
               class="card__img">
               <div class="card__wrapper">
@@ -298,9 +343,13 @@
             <!-- 1st Portfolio Card -->
             <li class="portfolio-card">
               <div class="portfolio-card__img">
-                <img src="./images/portfolio_project_banking_app.jpg" 
+                <img srcset="
+                  ./images/portfolio_project_banking_app@1x.jpg 1x,
+                  ./images/portfolio_project_banking_app@2x.jpg 2x
+                "
+                 src="./images/portfolio_project_banking_app@1x.jpg" 
                 alt="makieta aplikacji bankowej"           
-                width="360">
+                >
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -316,7 +365,7 @@
             <li class="portfolio-card">
               <div class="portfolio-card__img">
                 <img src="./images/portfolio_project_Cashless_Payment.jpg" alt="zdjęcie wykonywanie płatności telefonem"           
-                width="360">
+                >
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -331,8 +380,24 @@
             <!-- 3rd Portfolio Card -->
             <li class="portfolio-card">
               <div class="portfolio-card__img">
-                <img src="./images/portfolio_project_meditation-app.jpg" alt="zdjęcie laptop i smartfon z identycznym orazem na ekranie"           
-                width="360">
+                <picture class="portfolio-photo">
+                  <source media="(max-width: 767px)" 
+                    srcset="                                                ./images/meditation-mobile.jpg    1x,
+                    ./images/meditation-mobile@2x.jpg 2x
+                    "/>
+                  <source media="(min-width: 768px)" srcset="
+                                                            ./images/meditation-tablet.jpg    1x,
+                                                            ./images/meditation-tablet@2x.jpg 2x
+                                                        " />
+                  <source media="(min-width: 1158px)" srcset="
+                                                            ./images/meditation-desktop.jpg    1x,
+                                                            ./images/meditation-desktop@2x.jpg 2x
+                                                        " />
+                  <img src="./images/meditation-mobile.jpg" alt="Laptop and smartphone with meditation app" />
+                
+                  <img src="./images/portfolio_project_meditation-app.jpg" alt="zdjęcie laptop i smartfon z identycznym orazem na ekranie"           
+                  >
+                </picture>
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -347,8 +412,8 @@
             <!-- 4th Portfolio Card -->
             <li class="portfolio-card">
               <div class="portfolio-card__img">
-                <img src="./images/portfolio_project_taxi_service.jpg" alt="wnętrze samochodu, miejsce kierowcy z uruchomioną aplikacją na telefonie"           
-                width="360">
+                  <img src="./images/portfolio_project_taxi_service.jpg" alt="wnętrze samochodu, miejsce kierowcy z uruchomioną aplikacją na telefonie"           
+                  >
                 <p class="overlay">
                 14 Stylish and User-Friendly App Design Concepts · Task
                 Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -463,6 +528,70 @@
       </div>
     </footer>
 
+    <!-- backdrop + modal for mobile nav menu-->
+    <!-- 
+    <div class="nav-mobile is-open-ham">
+      <button type="button" class="close-btn">
+        <svg class="icon-form-close" width="8" height="8">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <div class="left-navi-list-set">
+        <ul class="left-navi-list ham">
+          <li>
+            <a href="./index.html" class="link ham current">Studio</a>
+          </li>
+          <li>
+            <a href="" class="link ham">Portfolio</a>
+          </li>
+          <li>
+            <a href="" class="link ham">Contacts</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sm-menu-set">
+        <ul class="right-navi-list ham">
+          <li>
+            <a href="mailto:info@devstudio.com" class="contact-link ham">info@devstudio.com</a>
+          </li>
+          <li>
+            <a href="tel:+110001111111" class="contact-link ham">
+              +11 (000) 111-11-11</a>
+          </li>
+        </ul>
+        <ul class="sm-menu ham">
+          <li class="icon-circle">
+            <a href="https://www.instagram.com/" class="sm-link link-footer" target="_blank">
+              <svg class="icon-sm sm-footer" width="24" height="24">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="icon-circle">
+            <a href="https://www.twitter.com/" class="sm-link link-footer" target="_blank">
+              <svg class="icon-sm sm-footer" width="24" height="24">
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="icon-circle">
+            <a href="https://www.facebook.com/" class="sm-link link-footer" target="_blank">
+              <svg class="icon-sm sm-footer" width="24" height="24">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="icon-circle">
+            <a href="https://www.linkedin.com/" class="sm-link link-footer" target="_blank">
+              <svg class="icon-sm sm-footer" width="24" height="24">
+                <use href="./images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    --> 
     <!-- backdrop + modal for entry section -->
     <div class="backdrop is-open">
       <div class="modal">
