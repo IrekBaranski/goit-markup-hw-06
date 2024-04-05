@@ -336,16 +336,16 @@
         <div class="container">
           <h2 class="section__heading">Our Portfolio</h2>
           <!-- Section Items :Portfolio Cards: img, wrapper, overlay -->
-          <ul class="section__items section__items--flex-wrap">
+          <ul class="section__items section__items--row-gap">
             <!-- 1st Portfolio Card -->
             <li class="portfolio-card">
               <div class="portfolio-card__img">
-                <img srcset="
-                  ./images/portfolio_project_banking_app@1x.jpg 1x,
-                  ./images/portfolio_project_banking_app@2x.jpg 2x
-                "
-                 src="./images/portfolio_project_banking_app@1x.jpg" 
-                alt="makieta aplikacji bankowej"           
+                <img 
+                  srcset="./images/portfolio_project_banking_app@1x.jpg 1x,
+                  ./images/portfolio_project_banking_app@2x.jpg 2x"
+                  src="./images/portfolio_project_banking_app@1x.jpg" 
+                  alt="makieta aplikacji bankowej"
+                  width="360"           
                 >
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -361,7 +361,10 @@
             <!-- 2nd Portfolio Card -->
             <li class="portfolio-card">
               <div class="portfolio-card__img">
-                <img src="./images/portfolio_project_Cashless_Payment.jpg" alt="zdjęcie wykonywanie płatności telefonem"           
+                <img 
+                  srcset="./images/portfolio_project_Cashless_Payment@1x.jpg 1x, ./images/portfolio_project_Cashless_Payment@2x.jpg 2x"
+                  src="./images/portfolio_project_Cashless_Payment@1x.jpg" alt="zdjęcie wykonywanie płatności telefonem"
+                  width="360"           
                 >
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -377,24 +380,12 @@
             <!-- 3rd Portfolio Card -->
             <li class="portfolio-card">
               <div class="portfolio-card__img">
-                <picture class="portfolio-photo">
-                  <source media="(max-width: 767px)" 
-                    srcset="                                                ./images/meditation-mobile.jpg    1x,
-                    ./images/meditation-mobile@2x.jpg 2x
-                    "/>
-                  <source media="(min-width: 768px)" srcset="
-                                                            ./images/meditation-tablet.jpg    1x,
-                                                            ./images/meditation-tablet@2x.jpg 2x
-                                                        " />
-                  <source media="(min-width: 1158px)" srcset="
-                                                            ./images/meditation-desktop.jpg    1x,
-                                                            ./images/meditation-desktop@2x.jpg 2x
-                                                        " />
-                  <img src="./images/meditation-mobile.jpg" alt="Laptop and smartphone with meditation app" />
-                
-                  <img src="./images/portfolio_project_meditation-app.jpg" alt="zdjęcie laptop i smartfon z identycznym orazem na ekranie"           
-                  >
-                </picture>
+                <img 
+                  srcset="./images/portfolio_project_meditation-app@1x.jpg 1x,
+                    ./images/portfolio_project_meditation-app@2x.jpg  2x"
+                  src="./images/portfolio_project_meditation-app.jpg"
+                  alt="zdjęcie laptop i smartfon z identycznym obrazem na ekranie"
+                >
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -462,13 +453,13 @@
     <!-- FOOTER  -->
     <footer class="footer">
       <div class="container footer__items">
-        <!-- 1st footer column item -->
+        <!-- 1st footer item -->
         <div class="footer-item footer-item__logo">
           <a class="logo footer__logo link" href="./index.html">Web<span class="logo--light-theme">Studio</span>
           </a>
           <p class="footer__text">Increase the flow of customers and sales for your business with digital marketing & growth solutions.</p>
         </div>
-        <!-- 2nd footer column item  -->
+        <!-- 2nd footer item  -->
         <div class="footer-item footer-item__social-media">
           <p class="footer__heading">Social media</p>
           <ul class="social-media-links social-media-links__footer">
@@ -504,7 +495,7 @@
           </ul>
         </div>
         <!-- 3rd footer item -->
-        <div class="footer-item__subscribe">
+        <div class="footer-item footer-item__subscribe">
           <p class="footer__heading">Subscribe</p>
           <form class="subscribe-form">
             <label for="mail" class="subscribe-form__label">
