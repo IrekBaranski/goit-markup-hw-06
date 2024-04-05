@@ -399,7 +399,7 @@ img {
             url(../images/people-office-desktop@2x.jpg);
     }
 }
-.entry-section__btn {
+.entry-section__     {
     margin-top: 48px;
     margin-left: auto;
     margin-right: auto;
@@ -682,16 +682,16 @@ img {
     align-items: baseline;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 72px;
+    row-gap: 72px;
 
     /* test color bg */
     background-color: brown;
 }
 .footer-item {
-    display: flex;
+    display: block;
     text-align: center;
     justify-content: center;
-    flex-wrap: wrap;
+    
 
     /* test color text */
     background-color:chartreuse;
@@ -704,6 +704,7 @@ img {
     margin-bottom: 16px;
 }
 .footer__text {
+    display: block;
     text-align: left;
     max-width: 100%;
     font-size: 16px;
@@ -714,16 +715,7 @@ img {
 }
 
 
-@media (min-width: 768px) {
-    .footer__text {
-        max-width: 264px;
-    }
-}
-@media (min-width: 1158px) {
-    .footer-item__logo {
-    margin-right: 120px;
-    }
-}
+
 
 
 
@@ -758,19 +750,7 @@ img {
 .icon-link__footer:hover {
     background-color: var(--green);
 }
-@media (min-width: 768px) {
-    .footer-item__social-media{
-    margin-right: 80px;
-}
 
-
-}
-
-@media (min-width: 1158px) {
-    
-
-
-}
 /* */
 
 /* foooter 3rd item - SUbscribe */
@@ -800,7 +780,6 @@ img {
     align-items: baseline;
     outline: none;
 }
-
 .subscribe-form__input::placeholder {
     color: var(--white);
     font-size: 12px;
@@ -810,7 +789,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     padding: 8px 24px;
     min-width: 165px;
 }
@@ -820,14 +799,45 @@ img {
     fill: var(--white);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 @media (min-width: 768px) {
+    .footer__items {
+        column-gap: 24px;
+        justify-content: left;
+        padding-left: 108px;
+        /* padding-left = containers padding (16px)+ footer items padding (92px) */
+    }
+    .footer-item {
+        text-align: left;
+    }
+    .footer__text {
+        max-width: 264px;
+    }
+    .subscribe-form {
+        column-gap: 24px;
+    }
+    .subscribe-form__input {
+        width: 264px;
+    }
 
 }
 
-
-
 @media (min-width: 1158px) {
+    .footer__items {
+        column-gap: 0px;
+        flex-wrap: nowrap;
+        padding-left: 15px;
+        justify-content: space-between;
+    }
 
+    .footer-item__logo {
+        margin-right: 120px;
+    }
+
+    .footer-item__subscribe {
+        margin-left: 80px;
+
+    }
 }
 /* FOOTER END */
 /* */
