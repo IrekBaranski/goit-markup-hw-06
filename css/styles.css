@@ -118,10 +118,6 @@ img {
 }
 @media (min-width: 768px) {
     .header-section__wrapper {
-        padding-top: 2px;
-        padding-bottom: 2px;
-        justify-content: flex-start;
-
         /* test */
         background-color: aquamarine;
     }   
@@ -197,8 +193,8 @@ img {
     display: block;
     margin-left: auto;
     font-style: normal;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: var(--slate);
 
@@ -224,22 +220,25 @@ img {
         display: none;
     }
     .menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
     }
     .address__list {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: flex-end;  
         gap: 12px;
-    }
-
-       
+    }      
 }
-
+@media (min-width: 1158px) {
+    .address__list {
+        flex-direction: row;
+        gap: 40px;
+    }
+}
 .active {
     position: relative;
     color: var(--ocean-color);
@@ -262,8 +261,7 @@ img {
 
 }
 
-@media (min-width: 1158px) {
-}
+
 
 .address__item:focus,
 .address__item:hover {
@@ -399,7 +397,7 @@ img {
             url(../images/people-office-desktop@2x.jpg);
     }
 }
-.entry-section__     {
+.entry-section__btn {
     margin-top: 48px;
     margin-left: auto;
     margin-right: auto;
@@ -770,6 +768,7 @@ img {
     border: 1px solid var(--white);
     border-radius: 4px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    opacity: 0.3;
     
     font-size: 12px;
     line-height: 2;
@@ -819,7 +818,6 @@ img {
     .subscribe-form__input {
         width: 264px;
     }
-
 }
 
 @media (min-width: 1158px) {
@@ -837,6 +835,9 @@ img {
     .footer-item__subscribe {
         margin-left: 80px;
 
+    } 
+    .subscribe-form__input {
+        opacity: 1;
     }
 }
 /* FOOTER END */
